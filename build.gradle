@@ -1,0 +1,18 @@
+apply plugin: 'groovy'
+apply plugin: 'project-report'
+apply plugin: 'maven'
+
+group = 'com.groves.douglas'
+version = '0.1' + (System.properties['VERSION'] ?: '-SNAPSHOT')
+
+repositories {
+    jcenter()
+    mavenLocal()
+}
+
+dependencies {
+	compile gradleApi()
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4', {
+        exclude module: 'groovy-all'
+    }
+}
