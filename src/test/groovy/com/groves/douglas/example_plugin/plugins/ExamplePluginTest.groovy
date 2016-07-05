@@ -22,6 +22,7 @@ class ExamplePluginTest extends Specification {
         when:
             interceptor.start()
             project.pluginManager.apply ExamplePlugin
+            project.tasks.example.execute() //TODO: find a better way of achieving this
             interceptor.stop()
         then:
             project.tasks.example instanceof Task

@@ -1,6 +1,7 @@
 package com.groves.douglas.example_plugin.plugins
 
 import com.groves.douglas.example_plugin.config.ExamplePluginExtension
+import com.groves.douglas.example_plugin.tasks.ExamplePluginTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -12,8 +13,6 @@ class ExamplePlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         project.extensions.create("example", ExamplePluginExtension)
-        project.task("example") << {
-            print "${project.example.greeting ?: 'Hi'} ${project.example.name}".trim()
-        }
+        project.task([type: ExamplePluginTask], "example")
     }
 }
