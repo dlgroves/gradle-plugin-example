@@ -6,7 +6,16 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 
 /**
- * TODO: Description goes here
+ * The main plugin class; responsible for defining the configuration extension and actions that will
+ * be performed during execution.
+ *
+ * Usage:
+ *
+ * example {
+ *     greeting = 'hello'
+ *     name = 'world'
+ * }
+ *
  * Created by dougg on 01/07/2016.
  */
 class ExamplePlugin implements Plugin<Project> {
